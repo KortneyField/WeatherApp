@@ -1,3 +1,5 @@
+//Setting up a server-side server at port 3000
+
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
@@ -9,7 +11,8 @@ const app = express();
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
-const bodyParser = require('body-parser')
+//dependencies 
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -22,8 +25,10 @@ app.use(express.static('website'));
 const port = 3000;
 
 // Setup Server
+//Express server is created using the listening method. 
+//Takes two arguments - a port to run the server on and a callback function to execute (listening).  
 const server = app.listen(port, listening);
 function listening(){
-    console.log(server);
-    console.log(`running on localhost: ${port}`);
+    console.log("Server Running...");
+    console.log(`This site is running on localhost: ${port}`);
 };
